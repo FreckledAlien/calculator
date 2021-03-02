@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+   
+
+
+  </style>
+</head>
+<body>
+  
+
+
+<p id="addition"></p>
+
+
+<script type="text/javascript">
+
+
+
+    function getNumber(num) {
+        var input_var = document.getElementById('input');
+        switch(num){
+            case 1:
+              input_var.value += '1';
+                break;
+                   case 2:
+              input_var.value += '2';
+                break;
+                   case 3:
+              input_var.value += '3';
+                break;
+                   case 4:
+              input_var.value += '4';
+                break;
+                   case 5:
+              input_var.value += '5';
+                break;
+                   case 6:
+              input_var.value += '6';
+                break;
+                   case 7:
+              input_var.value += '7';
+                break;
+                   case 8:
+              input_var.value += '8';
+                break;
+                   case 9:
+              input_var.value += '9';
+                break;
+                         case 0:
+              input_var.value += '0';
+                break;
+         
+
+          }
+      }
+
+function clearScreen() {
+  document.getElementById('input').value = "";
+  document.getElementById('answer').value = "";
+}
+
+
+  function getOperand(operand) {
+    var input_var = document.getElementById('input');
+      switch(operand){
+      case '+':
+           input_var.value += '+';
+                  break;
+       case '-':
+           input_var.value += '-';
+                  break;
+       case '/':
+           input_var.value += '/';
+                  break;
+       case 'x':
+           input_var.value += '*';
+                  break;
+      }
+
+
+  }
+
+function backspace() {
+  var input_var = document.getElementById('input');
+  var b = input_var.value;
+   if (b.length > 0) {
+      b = b.substring(0, b.length-1);
+      input_var.value = b;
+   }
+}
+
+function getTotal() {
+  var input_var = document.getElementById('input');
+  ans = Math.floor(+eval(input_var.value));
+  document.getElementById('answer').value = '=' + ans;
+}
+
+function convert(degree) {
+  var x;
+  if (degree == "d") {
+    d = document.getElementById("d").value * 9 / 5 + 32;
+    document.getElementById("d").value = Math.round(x);
+  } else {
+    f = (document.getElementById("f").value -32) * 5 / 9;
+    document.getElementById("f").value = Math.round(x);
+  }
+}
+
+</script>
+  <div>
+    
+    <input type="text" id="input" placeholder="0" readonly="readonly">
+ 
+  </div>
+<div>
+     <input type="text" id="answer" readonly="readonly">
+</div>
+
+
+  <div>
+    <input type="button" name="7" value="7" onclick="getNumber(7)">
+      <input type="button" name="8" value="8" onclick="getNumber(8)">
+        <input type="button" name="9" value="9" onclick="getNumber(9)">
+          <input type="button" name="x" value="x" onclick="getOperand('x')">
+  </div>
+
+    <div>
+    <input type="button" name="4" value="4" onclick="getNumber(4)">
+      <input type="button" name="5" value="5" onclick="getNumber(5)">
+        <input type="button" name="6" value="6" onclick="getNumber(6)">
+         <input type="button" name="-" value="-" onclick="getOperand('-')">
+  </div>
+  <div>
+    <input type="button" name="1" value="1" onclick="getNumber(1)">
+      <input type="button" name="2" value="2" onclick="getNumber(2)">
+        <input type="button" name="3" value="3" onclick="getNumber(3)">
+          <input type="button" name="+" value="+" onclick="getOperand('+')">
+
+  </div>
+    <div>
+    <input type="button" name="0" value="0" onclick="getNumber(0)">
+
+        <input type="button" name="/" value="/" onclick="getOperand('/')">
+          <input type="button" name="=" value="=" onclick="getTotal('=')">
+  </div>
+
+    <div>
+    <input type="button" name="CE" value="CE" onclick="clearScreen()">
+    <input type="button" name="&#8592;" value="&#8592;" onclick="backspace('b')">
+      
+  </div>
+<input type="button" name="d" value="D &#176"  onclick="convert('d')">
+<input type="button" name="f" value="F &#176" onclick="convert('f')">
+<div>
+  
+
+</div>
+</html>
